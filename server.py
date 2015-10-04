@@ -30,13 +30,18 @@ def db_add_hakk(name, comment):
     cur.execute("INSERT INTO Comments VALUES (?, ?, ?)", Comment_info)
     get_db().commit()
 
+@app.route("/home")
+def homepage():
+	username = [{'username': 'zephan'}]
+	return render_template('index1.html', username = username)
+
 @app.route("/")
 def hello():
 	Comments = db_read_Comments()
 	print(Comments)
 	return render_template('index.html', Comments=Comments)
 
-@app.route("/api/hakk", methods =["POST"])
+@app.route("/api/post", methods =["POST"])
 def receive_hakk():
 	print(request.form)
 	db_add_hakk(request.form['name'], request.form['comment'])
