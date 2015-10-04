@@ -7,7 +7,7 @@
     <h1>Sunbae</h1>
     <form action='/api/post' method="POST">
     name:
-     <input name="name" type="text" /> 
+     <input name="name" type="text" /> ss
     comment:
       <input name="comment" type="text" maxlength="4000" /> 
       <input type="submit" />
@@ -15,8 +15,8 @@
 
     <div id="feed">
 	   <h2> Comments </h2>
-	   {% for Comment in Comments%}
-	   <div class="Comment">
+	   {% for Comment in Comments%
+}	   <div class="Comment">
 	   	<b>{{ Comment[0] }}</b>
 	   	{{ Comment[2] }}
       <hr>
