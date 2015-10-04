@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Sunbae - Read the Real Syllabus</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Sunbae</h1>
+    <form action='/api/hakk' method="POST">
+    name:
+     <input name="name" type="text" /> 
+    comment:
+      <input name="comment" type="text" maxlength="4000" /> 
+      <input type="submit" />
+    </form>
+
+    <div id="feed">
+	   <h2> Comments </h2>
+	   {% for Comment in Comments%}
+	   <div class="Comment">
+	   	<b>{{ Comment[0] }}</b>
+	   	{{ Comment[2] }}
+      <hr>
+	   </div>
+	   {% endfor %}
+    </div>
+  </body>
+</html>
